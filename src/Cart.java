@@ -6,8 +6,9 @@ public class Cart {
     public void add(Product product, int quantity) {
         if (quantity > product.getQuantity()) {
             System.out.println("Error: Requested quantity exceeds available stock.");
-            return;
+            System.exit(1);
         }
+
         items.put(product, items.getOrDefault(product, 0) + quantity);
     }
 

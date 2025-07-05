@@ -7,6 +7,7 @@ public class CheckoutService {
         if (cart.isEmpty()) {
             System.out.println("Error: Cart is empty.");
             return;
+
         }
 
         double subtotal = 0;
