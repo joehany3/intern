@@ -22,6 +22,11 @@ public class CheckoutService {
                 return;
             }
 
+            if (qty <= 0) {
+                System.err.println("Error: you don't any product in cart");
+                System.exit(1);
+
+            }
             if (qty > product.getQuantity()) {
                 System.out.println("Error: Product " + product.getName() + " is out of stock.");
                 return;
@@ -29,7 +34,7 @@ public class CheckoutService {
 
             subtotal += product.getPrice() * qty;
 
-            if (product.isShippable() && product instanceof ShippableProduct) {
+            if (product instanceof ShippableProduct) {
                 for (int i = 0; i < qty; i++) {
                     shippableItems.add((ShippableProduct) product);
                 }
@@ -57,6 +62,7 @@ public class CheckoutService {
             System.out.printf("%dx %-12s %.0f%n", entry.getValue(), entry.getKey().getName(),
                     entry.getKey().getPrice() * entry.getValue());
         }
+
         System.out.println("----------------------");
         System.out.printf("Subtotal         %.0f%n", subtotal);
         System.out.printf("Shipping         %.0f%n", SHIPPING_COST);

@@ -28,5 +28,4 @@ public abstract class Product {
     }
 
     public abstract boolean isExpired();
-    public abstract boolean isShippable();
 }

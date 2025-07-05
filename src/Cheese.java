@@ -12,9 +12,7 @@ public class Cheese extends Product implements ShippableProduct {
         return expired;
     }
 
-    public boolean isShippable() {
-        return true;
-    }
+
 
     public double getWeight() {
         return weight;

@@ -10,10 +10,6 @@ public class TV extends Product implements ShippableProduct {
         return false;
     }
 
-    public boolean isShippable() {
-        return true;
-    }
-
     public double getWeight() {
         return weight;
     }

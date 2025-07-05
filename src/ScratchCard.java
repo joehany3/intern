@@ -7,7 +7,4 @@ public class ScratchCard extends Product {
         return false;
     }
 
-    public boolean isShippable() {
-        return false;
-    }
 }
